@@ -1,0 +1,18 @@
+#Creating fraction datatype using special methods in python
+class Fraction:
+    def __init__(self,n,d):
+        self.num = n
+        self.den = d
+    def __str__(self):
+        return "{}/{}".format(self.num,self.den)
+    def __add__(self,other):
+
+        temp_num = (self.num*other.den) + (other.num*self.den)
+        temp_den = self.den*other.den
+
+        return "{}/{}".format(temp_num,temp_den)
+    def __sub__(self,other):
+        temp1_num = (self.num*other.den) - (other.num*self.den)
+        temp1_den = self.den*other.den
+
+        return "{}/{}".format(temp1_num,temp1_den)
